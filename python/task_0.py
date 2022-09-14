@@ -1,11 +1,10 @@
 def step2_umbrella():
-  print('Все равно на удаленке')
-  return 1
+    print('Все равно на удаленке')
 
 
 def step2_no_umbrella():
-  print('Значит утка на удаленке')
-  return 0
+    print('Значит утка на удаленке')
+
 
 def step1():
     print(
@@ -17,11 +16,11 @@ def step1():
     while option not in options:
         print('Выберите: {}/{}'.format(*options))
         option = input()
-    
+
     if options[option]:
         return step2_umbrella()
     return step2_no_umbrella()
 
+
 if __name__ == '__main__':
     step1()
-
