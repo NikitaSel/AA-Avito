@@ -1,4 +1,5 @@
 import json
+import keyword
 from typing import Any
 from functools import wraps
 
@@ -22,6 +23,8 @@ class ColorizeMixin:
 class Base:
     def __init__(self, dict_: dict):
         for key in dict_:
+            if keyword.iskeyword(key):
+                key = f'{key}_'
             setattr(self, key, dict_[key])
         
     def __setattr__(self, __name: str, __value: Any) -> None:
@@ -58,18 +61,19 @@ class Advert(ColorizeMixin, Base):
     def __repr__(self) -> str:
         return f'{self._title} | {self._price} ₽'
 
+if __name__ == '__main__':
+    
+    lesson_str = """{
+        "title": "python",
+        "price": 0,
+        "location": {
+            "address": "город Москва, Лесная, 7",
+            "metro_stations": ["Белорусская"]
+            }
+    }"""
 
-lesson_str = """{
-    "title": "python",
-    "price": 0,
-    "location": {
-        "address": "город Москва, Лесная, 7",
-        "metro_stations": ["Белорусская"]
-        }
-}"""
+    lesson = json.loads(lesson_str)
 
-lesson = json.loads(lesson_str)
-
-lesson_ad = Advert(lesson)
-print(lesson_ad)
-print(lesson_ad.location.address)
+    lesson_ad = Advert(lesson)
+    print(lesson_ad)
+    print(lesson_ad.location.address)
