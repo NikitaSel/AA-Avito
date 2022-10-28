@@ -1,3 +1,6 @@
+#import sys
+#sys.path.append('/Users/nikitaseleznev/Python/AAA_Python')
+
 from typing import Iterable
 from helper import count_vocab_fast
 #another realization
