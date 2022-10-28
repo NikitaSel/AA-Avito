@@ -15,15 +15,15 @@ def count_vocab_clear(corpus: Iterable, processing: Callable) -> tuple[dict, lis
 
         vocabulary = sorted(list(unique_features))
 
-        X = [[counter[word] for word in vocabulary] for counter in feature_counters]
-        return vocabulary, X
+        count_matrix = [[counter[word] for word in vocabulary] for counter in feature_counters]
+        return vocabulary, count_matrix
 
 def count_vocab_fast(corpus: Iterable, processing: Callable) -> tuple[dict, list[list[int]]]:
         """
         Gets vocabulary and matrix
         """
         
-        X = []
+        count_matrix = []
         vocabulary = []
         unique_features = {}
 
@@ -32,10 +32,10 @@ def count_vocab_fast(corpus: Iterable, processing: Callable) -> tuple[dict, list
             feature_counter = Counter(words)
             unique_features.update(feature_counter)
             vocabulary.extend([word for word in feature_counter.keys()])
-            X.append([feature_counter[word] for word in vocabulary])
+            count_matrix.append([feature_counter[word] for word in vocabulary])
 
         len_vocab = len(vocabulary)
-        for row in X:
+        for row in count_matrix:
             zeros_extend = [0] * (len_vocab - len(row))
             row.extend(zeros_extend)
-        return vocabulary, X
+        return vocabulary, count_matrix
