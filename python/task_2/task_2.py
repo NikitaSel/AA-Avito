@@ -1,5 +1,7 @@
 from typing import Iterable
-from helper import count_vocab_clear, count_vocab_fast
+from helper import count_vocab_fast
+#another realization
+#from helper import count_vocab_clear
 
 class CountVectorizer:
     def __init__(self):
@@ -18,9 +20,9 @@ class CountVectorizer:
         Gets vocabulary and matrix
         """
 
-        vocabulary, X =  self._count_vocab(corpus)
+        vocabulary, count_matrix =  self._count_vocab(corpus)
         self._vocabulary = vocabulary
-        return X
+        return count_matrix
 
     def get_feature_names(self):
         """
