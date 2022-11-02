@@ -2,7 +2,7 @@ import csv
 
 from udict import UniqueKeyDict
 from functools import partial
-from F import (
+from f import (
     print_command_hierarchy, 
     print_summary_report,
     save_summary_report,
@@ -23,7 +23,7 @@ CASE2FUNC['2'] = print_summary_report
 CASE2FUNC['3'] = partial(save_summary_report, file_path=SAVE_TO)
 
 
-def read(file_path: str, case: str, delimiter: str = ';') -> None:
+def parse(file_path: str, case: str, delimiter: str = ';') -> None:
     """
     Reads a file and does one of four requests:
 
@@ -48,7 +48,7 @@ def read(file_path: str, case: str, delimiter: str = ';') -> None:
         CASE2FUNC[case](reader)
 
 
-def read_csv(file_path: str = READ_FROM, delimiter: str = ';') -> None:
+def parse_csv(file_path: str = READ_FROM, delimiter: str = ';') -> None:
     """
     Reads a file and does requests until exit:
 
@@ -77,9 +77,9 @@ def read_csv(file_path: str = READ_FROM, delimiter: str = ';') -> None:
     print_command_information()
 
     while (input_ := correct_input(input())) != 'exit':
-        read(file_path, input_, delimiter)
+        parse(file_path, input_, delimiter)
     else:
-        print("Program completed")
+        print('Program completed')
 
 if __name__ == '__main__':
-    read_csv()
+    parse_csv()
