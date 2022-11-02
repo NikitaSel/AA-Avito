@@ -191,15 +191,15 @@ def print_command_hierarchy(reader: Reader) -> True:
 
     llen, rlen = print_command_hierarchy_helper(command_hierarchy)
 
-    print(f"%-{llen}s %-{rlen}s" % ('Департамент', 'Отдел'))
+    print(f'%-{llen}s %-{rlen}s' % ('Департамент', 'Отдел'))
 
     for i, dep in enumerate(command_hierarchy):
         for j, team in enumerate(command_hierarchy[dep]):
             if j == 0:
-                print(f"%-{llen}s %-{rlen}s" % ('-'*llen, '-'*rlen))
-                print(f"%-{llen}s %-{rlen}s" % (f'{i}. ' + dep, f'{j}. ' + team))
+                print(f'%-{llen}s %-{rlen}s' % ('-'*llen, '-'*rlen))
+                print(f'%-{llen}s %-{rlen}s' % (f'{i}. ' + dep, f'{j}. ' + team))
                 continue
-            print(f"%-{llen}s %-{rlen}s" % (' ', f'{j}. ' + team))
+            print(f'%-{llen}s %-{rlen}s' % (' ', f'{j}. ' + team))
 
     return True
 
@@ -297,14 +297,14 @@ def print_summary_report(reader: Reader) -> True:
 
     llen, mlen, rlen = print_summary_report_helper(summary_report)
 
-    print(f"%-{llen}s %-{mlen}s %-{rlen}s" % ('Департамент', 'Численность', 'Вилка ЗП'))
+    print(f'%-{llen}s %-{mlen}s %-{rlen}s' % ('Департамент', 'Численность', 'Вилка ЗП'))
 
     for i, (dep, rep) in enumerate(summary_report.items()):
         number = rep['number']
         min_max_sal = str(rep['min_max_sal'][0]) + ' - ' + str(rep['min_max_sal'][1])
 
-        print(f"%-{llen}s %-{mlen}s %-{rlen}s" % ('-'*llen, '-'*mlen, '-'*rlen))
-        print(f"%-{llen}s %-{mlen}s %-{rlen}s" % (f'{i}. ' + dep, number, min_max_sal))
+        print(f'%-{llen}s %-{mlen}s %-{rlen}s' % ('-'*llen, '-'*mlen, '-'*rlen))
+        print(f'%-{llen}s %-{mlen}s %-{rlen}s' % (f'{i}. ' + dep, number, min_max_sal))
 
     return True
 
