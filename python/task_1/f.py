@@ -1,7 +1,7 @@
 import os
 import csv
 from typing import List
-reader = csv.reader("e")
+reader = csv.reader('')
 Reader = type(reader)
 
 
