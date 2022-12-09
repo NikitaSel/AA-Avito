@@ -16,11 +16,11 @@ python3 -m unittest -v issue-03.py 2> .\result_03.txt
 python3 -m pytest -v issue-04.py > .\result_04.txt
 ```
 ### issue-05
-## запусн
+## запуск
 ```python
 python3 -m unittest -v issue-05.py 2> .\result_05.txt
 ```
-### для получения отсчета покрытия
+## для получения отсчета покрытия
 ```python
 python3 -m coverage run -m unittest issue-05.py
 python3 -m coverage html
