@@ -36,7 +36,3 @@ class TestYearNow(unittest.TestCase):
         mock_urlopen.return_value = self.get_mock_temporaty(resp)
         with self.assertRaises(KeyError):
             what_is_year_now()
-
-
-if __name__ == '__main__':
-    unittest.main()
