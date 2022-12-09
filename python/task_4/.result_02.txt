@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.8, pytest-7.2.0, pluggy-1.0.0 -- /opt/homebrew/opt/python@3.10/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /Users/nikitaseleznev/Python/AAA_Python /AA-Avito/python/task_4
+collecting ... collected 4 items
+
+issue-02.py::test_decode[... --- ...-SOS] PASSED                         [ 25%]
+issue-02.py::test_decode[- . ... --TEST] PASSED                          [ 50%]
+issue-02.py::test_decode[-- --- .-. ... .-MORSE] PASSED                  [ 75%]
+issue-02.py::test_letter_not_in_morse PASSED                             [100%]
+
+============================== 4 passed in 0.00s ===============================
