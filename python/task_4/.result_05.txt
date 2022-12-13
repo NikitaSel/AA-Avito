@@ -1,0 +1,9 @@
+test_first_format (issue-05.TestYearNow) ... ok
+test_second_format (issue-05.TestYearNow) ... ok
+test_wrong_data_format (issue-05.TestYearNow) ... ok
+test_wrong_json (issue-05.TestYearNow) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

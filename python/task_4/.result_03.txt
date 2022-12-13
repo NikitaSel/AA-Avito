@@ -1,0 +1,9 @@
+test_empty (issue-03.TestFitTransform) ... ok
+test_equal (issue-03.TestFitTransform) ... ok
+test_in (issue-03.TestFitTransform) ... ok
+test_raise_if_not_len (issue-03.TestFitTransform) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
